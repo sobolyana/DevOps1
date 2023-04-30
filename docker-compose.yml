@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  web-server:
+    image: nginx:latest
+    ports:
+      - "80:80"
+  check-server:
+    build: .
+    depends_on:
+      - web-server
